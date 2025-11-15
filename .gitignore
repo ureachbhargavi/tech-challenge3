@@ -1,0 +1,16 @@
+# === Terraform (inside Terraform/ folder only) ===
+Terraform/.terraform/
+Terraform/.terraform.lock.hcl
+Terraform/*.tfstate
+Terraform/*.tfstate.backup
+Terraform/*.tfvars
+Terraform/*.tfvars.json
+Terraform/crash.log
+Terraform/*.tfplan
+Terraform/override.tf
+Terraform/override.tf.json
+Terraform/*_override.tf
+Terraform/*_override.tf.json
+
+# === Terraform Provider / Plugin Cache ===
+Terraform/.terraform.d/

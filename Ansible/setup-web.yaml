@@ -1,0 +1,27 @@
+---
+# This playbook installs Apache and deploys Hello World page
+
+- name: Configure Web Server
+  hosts: webservers
+  become: yes   # use sudo
+
+  tasks:
+
+    - name: Install Apache
+      yum:
+        name: httpd
+        state: present
+
+    - name: Start Apache service
+      systemd:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Copy Hello World HTML file
+      copy:
+        src: files/index.html
+        dest: /var/www/html/index.html
+        owner: apache
+        group: apache
+        mode: '0644'
